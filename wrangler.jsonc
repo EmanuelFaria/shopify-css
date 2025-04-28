@@ -1,9 +1,10 @@
 {
   "name": "shopify-css",
+  "main": "index.js", // Add this line
   "compatibility_date": "2025-04-28",
   "assets": {
     "directory": "./",
     "binding": "ASSETS",
-    "exclude": [".*"] // Add this to ignore .DS_Store and other hidden files
+    "exclude": [".*", "*.md", "wrangler*"] // Exclude hidden files and configs
   }
 }
