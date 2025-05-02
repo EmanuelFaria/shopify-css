@@ -207,33 +207,66 @@ body {
 }
 
 .email-button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 12px rgba(58, 168, 109, 0.3);
+	transform: translateY(-1px);
+	box-shadow: 0 6px 12px rgba(58, 168, 109, 0.3);
 }
 
 /* Share buttons with icons */
-.share-btn, .whatsapp-btn, .email-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-1, 8px);
-  max-width: 100%;
-  box-sizing: border-box;
+.share-btn,
+.whatsapp-btn,
+.email-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--space-1, 8px);
+	max-width: 100%;
+	box-sizing: border-box;
 }
 
-.share-btn svg, .whatsapp-btn svg, .email-btn svg {
-  width: 20px;
-  height: 20px;
-  fill: currentColor;
+/* Mobile optimization for share buttons */
+@media only screen and (max-width: 600px) {
+  .share-btn, .whatsapp-btn, .email-btn {
+    width: 100%;
+    padding: var(--space-1) var(--space-2);
+    margin-bottom: var(--space-2);
+  }
+  
+  .share-btn svg, .whatsapp-btn svg, .email-btn svg {
+    margin-right: var(--space-1);
+  }
+}
+
+/* SVG icon settings */
+.share-btn svg,
+.whatsapp-btn svg,
+.email-btn svg {
+	width: 20px;
+	height: 20px;
+	margin-right: 8px;
+	flex-shrink: 0;
+}
+
+/* WhatsApp specific icon settings */
+.whatsapp-btn svg {
+	fill: currentColor;
+}
+
+/* Email specific icon settings */
+.email-btn svg {
+	fill: none;
+	stroke: currentColor;
+	stroke-width: 2;
+	stroke-linecap: round;
+	stroke-linejoin: round;
 }
 
 /* Email Secondary Button */
 .email-button-secondary {
-  background: #f0f7f3;
-  color: var(--color-primary-dark) !important;
-  border: 2px solid var(--color-primary);
-  max-width: 100%;
-  box-sizing: border-box;
+	background: #f0f7f3;
+	color: var(--color-primary-dark) !important;
+	border: 2px solid var(--color-primary);
+	max-width: 100%;
+	box-sizing: border-box;
 }
 
 /* Email Section Cards */
@@ -954,59 +987,63 @@ body {
 
 /* Static fallback for email clients */
 .progress-fill-static {
-  background-color: var(--color-time);
-  height: 12px;
-  width: 68%;
-  /* Default - should be overridden as needed */
-  border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+	background-color: var(--color-time);
+	height: 12px;
+	width: 68%;
+	/* Default - should be overridden as needed */
+	border-radius: var(--radius-sm) 0 0 var(--radius-sm);
 }
 
 /* Progress bar label styling */
 .steps-labels {
-  display: flex !important;
-  justify-content: space-between !important;
-  margin-top: 36px !important; /* Increased to move text further down */
-  width: 100% !important;
-  position: relative !important;
-  height: auto !important;
-  padding-top: 10px !important;
+	display: flex !important;
+	justify-content: space-between !important;
+	margin-top: 36px !important;
+	/* Increased to move text further down */
+	width: 100% !important;
+	position: relative !important;
+	height: auto !important;
+	padding-top: 10px !important;
 }
 
 .step-label {
-  font-size: 13px !important; /* Slightly smaller font size */
-  color: var(--color-text-light, #666) !important;
-  width: 90px !important; /* Wider to accommodate text */
-  padding: 0 5px !important;
-  margin: 0 !important;
-  line-height: 1.3 !important;
-  white-space: nowrap !important; /* Prevent wrapping */
-  min-height: 24px !important;
-  vertical-align: top !important;
+	font-size: 13px !important;
+	/* Slightly smaller font size */
+	color: var(--color-text-light, #666) !important;
+	width: 90px !important;
+	/* Wider to accommodate text */
+	padding: 0 5px !important;
+	margin: 0 !important;
+	line-height: 1.3 !important;
+	white-space: nowrap !important;
+	/* Prevent wrapping */
+	min-height: 24px !important;
+	vertical-align: top !important;
 }
 
 /* Individual step label alignment fixes */
 .step-label:nth-child(1) {
-  text-align: left !important;
-  margin-left: -10px !important;
+	text-align: left !important;
+	margin-left: -10px !important;
 }
-      
+
 .step-label:nth-child(2) {
-  text-align: center !important;
-  margin-left: -10px !important;
+	text-align: center !important;
+	margin-left: -10px !important;
 }
-      
+
 .step-label:nth-child(3) {
-  text-align: center !important;
-  margin-left: 0 !important;
+	text-align: center !important;
+	margin-left: 0 !important;
 }
-      
+
 .step-label:nth-child(4) {
-  text-align: right !important;
-  margin-right: -10px !important;
+	text-align: right !important;
+	margin-right: -10px !important;
 }
 
 .status-indicator-animation {
-  position: relative;
+	position: relative;
 }
 
 .status-indicator-animation::after {
