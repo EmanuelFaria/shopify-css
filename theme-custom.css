@@ -28,23 +28,23 @@
 	--space-5: 40px;
 	/* 5× base */
 
-	/* Typography Scale System */
-	--text-xs: 12px;
-	/* caption */
-	--text-sm: 14px;
-	/* small body */
-	--text-base: 16px;
-	/* base body (2×8px) */
-	--text-lg: 24px;
-	/* h2 (3×8px) */
-	--text-xl: 32px;
-	/* h1 (4×8px) */
+/* Typography Scale System */
+--text-xs: 11px;
+/* small print, legal */
+--text-sm: 12px;
+/* caption, helpers */
+--text-base: 14px;
+/* base body */
+--text-lg: 20px;
+/* h2 */
+--text-xl: 24px;
+/* h1 */
 
-	/* Line Heights */
-	--leading-tight: 1.2;
-	/* headings */
-	--leading-normal: 1.5;
-	/* body text */
+/* Line Heights */
+--leading-tight: 1.3;
+/* headings */
+--leading-normal: 1.5;
+/* body text */
 
 	/* Brand Colors */
 	--color-primary: #3aa86d;
@@ -77,6 +77,7 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	padding-top: 60px;
 	/* Account for fixed navigation */
+	font-size: var(--text-base);
 }
 
 /* ---------- STANDARDIZED TRUST GRADIENT ---------- */
@@ -185,23 +186,26 @@ body {
 /* Responsive Email Button Sizing */
 @media (min-width: 769px) {
 	.email-button {
-		padding: var(--space-2) var(--space-3);
-		font-size: var(--text-base);
+		padding: 12px 16px;
+		font-size: 15px;
+		min-height: 44px;
 	}
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
 	.email-button {
-		padding: 10px 20px;
+		padding: 10px 16px;
 		font-size: 15px;
+		min-height: 44px;
 	}
 }
 
 @media (max-width: 480px) {
 	.email-button {
-		padding: var(--space-1) var(--space-2);
-		font-size: var(--text-sm);
+		padding: 10px 12px;
+		font-size: var(--text-base);
 		width: 100%;
+		min-height: 44px;
 		min-width: auto !important;
 	}
 }
@@ -225,15 +229,20 @@ body {
 
 /* Mobile optimization for share buttons */
 @media only screen and (max-width: 600px) {
-  .share-btn, .whatsapp-btn, .email-btn {
-    width: 100%;
-    padding: var(--space-1) var(--space-2);
-    margin-bottom: var(--space-2);
-  }
-  
-  .share-btn svg, .whatsapp-btn svg, .email-btn svg {
-    margin-right: var(--space-1);
-  }
+
+	.share-btn,
+	.whatsapp-btn,
+	.email-btn {
+		width: 100%;
+		padding: var(--space-1) var(--space-2);
+		margin-bottom: var(--space-2);
+	}
+
+	.share-btn svg,
+	.whatsapp-btn svg,
+	.email-btn svg {
+		margin-right: var(--space-1);
+	}
 }
 
 /* SVG icon settings */
@@ -356,7 +365,7 @@ body {
 }
 
 .nav-link {
-	padding: var(--space-1) var(--space-2);
+	padding: 8px 12px;
 	background: var(--color-background);
 	border: none;
 	border-radius: var(--radius-md);
@@ -365,6 +374,9 @@ body {
 	color: var(--color-text-light);
 	transition: all 0.2s ease;
 	white-space: nowrap;
+	min-height: 36px;
+	display: inline-flex;
+	align-items: center;
 }
 
 .nav-link:hover {
@@ -409,7 +421,7 @@ body {
 }
 
 .tab-button {
-	padding: var(--space-2) var(--space-3);
+	padding: 10px 12px;
 	background: var(--color-background);
 	border: none;
 	border-radius: var(--radius-md) var(--radius-md) 0 0;
@@ -417,6 +429,7 @@ body {
 	font-size: var(--text-sm);
 	color: var(--color-text-light);
 	transition: all 0.2s ease;
+	min-height: 36px;
 }
 
 .tab-button:hover {
@@ -560,6 +573,57 @@ body {
 	padding: var(--space-3);
 }
 
+/* Form element recommendations */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+select,
+textarea {
+	height: 44px;
+	padding: 10px 12px;
+	font-size: var(--text-base);
+	border-radius: 8px;
+	border: 1px solid #ccc;
+}
+
+textarea {
+	min-height: 88px;
+	height: auto;
+}
+
+label {
+	font-size: var(--text-base);
+	margin-bottom: 8px;
+	display: block;
+}
+
+.form-helper-text {
+	font-size: var(--text-sm);
+	color: var(--color-text-light);
+	margin-top: 4px;
+}
+
+.form-group {
+	margin-bottom: 16px;
+}
+
+.checkbox-label,
+.radio-label {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-bottom: 8px;
+	cursor: pointer;
+}
+
+.checkbox-input,
+.radio-input {
+	width: 20px;
+	height: 20px;
+	flex-shrink: 0;
+}
+
 /* Alert Styles */
 .alert {
 	padding: var(--space-2);
@@ -651,7 +715,7 @@ body {
 			var(--color-blue));
 	color: white;
 	border: none;
-	border-radius: var(--radius-pill);
+	border-radius: 22px;
 	font-weight: 600;
 	text-align: center;
 	cursor: pointer;
@@ -660,27 +724,28 @@ body {
 	text-decoration: none;
 	max-width: 100%;
 	box-sizing: border-box;
+	min-height: 44px;
 }
 
 /* Responsive Button Sizing - Combined for better specificity */
 @media (min-width: 769px) {
 	.button-primary {
-		padding: var(--space-2) var(--space-3);
-		font-size: var(--text-base);
+		padding: 12px 16px;
+		font-size: 15px;
 	}
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
 	.button-primary {
-		padding: 10px 20px;
+		padding: 10px 16px;
 		font-size: 15px;
 	}
 }
 
 @media (max-width: 480px) {
 	.button-primary {
-		padding: var(--space-1) var(--space-2);
-		font-size: var(--text-sm);
+		padding: 10px 12px;
+		font-size: 14px;
 		width: 100%;
 		min-width: auto !important;
 	}
@@ -690,17 +755,20 @@ body {
 	background-color: #ffffff;
 	color: var(--color-primary);
 	border: 1px solid var(--color-primary);
-	border-radius: var(--radius-pill);
-	padding: var(--space-2) var(--space-3);
-	font-size: var(--text-base);
+	border-radius: 22px;
+	padding: 12px 16px;
+	font-size: 15px;
 	font-weight: 600;
 	text-align: center;
 	cursor: pointer;
 	transition: all 0.3s ease;
-	display: inline-block;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
 	text-decoration: none;
 	max-width: 100%;
 	box-sizing: border-box;
+	min-height: 44px;
 }
 
 .button-gradient {
@@ -709,36 +777,42 @@ body {
 			var(--color-blue));
 	color: white;
 	border: none;
-	border-radius: var(--radius-pill);
-	padding: var(--space-2) var(--space-3);
-	font-size: var(--text-base);
+	border-radius: 22px;
+	padding: 12px 16px;
+	font-size: 15px;
 	font-weight: 600;
 	text-align: center;
 	cursor: pointer;
 	transition: all 0.3s ease;
-	display: inline-block;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
 	text-decoration: none;
 	box-shadow: 0 2px 8px rgba(58, 168, 109, 0.3);
 	max-width: 100%;
 	box-sizing: border-box;
+	min-height: 44px;
 }
 
 .button-story {
 	background-color: #f0f7f3;
 	color: #2d8c57;
 	border: 2px solid var(--color-primary);
-	border-radius: var(--radius-pill);
-	padding: var(--space-2) var(--space-3);
-	font-size: var(--text-base);
+	border-radius: 22px;
+	padding: 12px 16px;
+	font-size: 15px;
 	font-weight: 600;
 	text-align: center;
 	cursor: pointer;
 	transition: all 0.3s ease;
-	display: inline-block;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
 	text-decoration: none;
 	box-shadow: 0 2px 8px rgba(58, 168, 109, 0.15);
 	max-width: 100%;
 	box-sizing: border-box;
+	min-height: 44px;
 }
 
 .button-with-icon {
@@ -857,18 +931,21 @@ body {
 			var(--color-primary-dark));
 	color: white;
 	border: none;
-	border-radius: var(--radius-pill);
-	padding: var(--space-2) var(--space-3);
-	font-size: var(--text-base);
+	border-radius: 22px;
+	padding: 12px 16px;
+	font-size: 15px;
 	font-weight: 600;
 	text-align: center;
 	cursor: pointer;
 	transition: all 0.3s ease;
-	display: inline-block;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
 	text-decoration: none;
 	box-shadow: 0 2px 8px rgba(58, 168, 109, 0.3);
 	max-width: 100%;
 	box-sizing: border-box;
+	min-height: 44px;
 }
 
 .button-gradient-dark-to-light {
@@ -877,18 +954,21 @@ body {
 			var(--color-primary));
 	color: white;
 	border: none;
-	border-radius: var(--radius-pill);
-	padding: var(--space-2) var(--space-3);
-	font-size: var(--text-base);
+	border-radius: 22px;
+	padding: 12px 16px;
+	font-size: 15px;
 	font-weight: 600;
 	text-align: center;
 	cursor: pointer;
 	transition: all 0.3s ease;
-	display: inline-block;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
 	text-decoration: none;
 	box-shadow: 0 2px 8px rgba(58, 168, 109, 0.3);
 	max-width: 100%;
 	box-sizing: border-box;
+	min-height: 44px;
 }
 
 /* STATUS INDICATOR STYLES */
@@ -999,7 +1079,7 @@ body {
 	display: flex !important;
 	justify-content: space-between !important;
 	margin-top: 36px !important;
-	/* Increased to move text further down */
+	/* Increased vertical space */
 	width: 100% !important;
 	position: relative !important;
 	height: auto !important;
@@ -1008,17 +1088,19 @@ body {
 
 .step-label {
 	font-size: 13px !important;
-	/* Slightly smaller font size */
+	/* Slightly smaller text */
 	color: var(--color-text-light, #666) !important;
 	width: 90px !important;
-	/* Wider to accommodate text */
+	/* Fixed width */
 	padding: 0 5px !important;
 	margin: 0 !important;
 	line-height: 1.3 !important;
 	white-space: nowrap !important;
-	/* Prevent wrapping */
+	/* Critical: prevent text wrapping */
 	min-height: 24px !important;
 	vertical-align: top !important;
+	overflow: visible !important;
+	/* Ensure text doesn't get cut off */
 }
 
 /* Individual step label alignment fixes */
@@ -1040,6 +1122,14 @@ body {
 .step-label:nth-child(4) {
 	text-align: right !important;
 	margin-right: -10px !important;
+}
+
+/* Additional responsive fixes for mobile */
+@media only screen and (max-width: 400px) {
+	.step-label {
+		font-size: 12px !important;
+		/* Even smaller on very small screens */
+	}
 }
 
 .status-indicator-animation {
@@ -1956,12 +2046,14 @@ body {
 .button {
 	max-width: 100%;
 	box-sizing: border-box;
-	padding: 16px 24px;
+	padding: 12px 16px;
 	overflow-wrap: break-word;
 	word-wrap: break-word;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	min-height: 44px;
+	font-size: 15px;
 }
 
 /* Enhanced Mobile Media Queries - Fixed nested query */
@@ -1975,11 +2067,11 @@ body {
 	.button,
 	.trust-gradient {
 		width: 100% !important;
-		padding-left: 16px !important;
-		padding-right: 16px !important;
+		padding-left: 12px !important;
+		padding-right: 12px !important;
 		min-width: auto !important;
 		box-sizing: border-box !important;
-		font-size: 14px !important;
+		font-size: var(--text-base) !important;
 	}
 }
 
@@ -1992,9 +2084,9 @@ body {
 	.whatsapp-button,
 	.button-primary,
 	.button {
-		padding-left: 12px !important;
-		padding-right: 12px !important;
-		font-size: 13px !important;
+		padding-left: 8px !important;
+		padding-right: 8px !important;
+		font-size: var(--text-base) !important;
 	}
 }
 
